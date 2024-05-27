@@ -1,5 +1,8 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
+<<<<<<< HEAD
 
+=======
+>>>>>>> todari
 import * as S from './Button.style';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -23,6 +26,7 @@ const Button = ({
   ...rest
 }: ButtonProps) => {
   return (
+<<<<<<< HEAD
     <S.Button
       disabled={isDisabled}
       size={size}
@@ -32,6 +36,9 @@ const Button = ({
       square={square}
       {...rest}
     >
+=======
+    <S.Button disabled={isDisabled} size={size} width={width} radius={radius} color={color} square={square} {...rest}>
+>>>>>>> todari
       {children}
     </S.Button>
   );

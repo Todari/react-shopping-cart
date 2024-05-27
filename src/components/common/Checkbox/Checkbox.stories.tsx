@@ -22,6 +22,7 @@ export const Playground: Story = {
   decorators: [
     () => {
       const [isChecked, setIsChecked] = useState(false);
+<<<<<<< HEAD
       return (
         <div style={{ height: '24px', width: '24px' }}>
           <Checkbox
@@ -30,6 +31,9 @@ export const Playground: Story = {
           />
         </div>
       );
+=======
+      return <Checkbox state={isChecked} handleClick={() => setIsChecked(!isChecked)} />;
+>>>>>>> todari
     },
   ],
 };

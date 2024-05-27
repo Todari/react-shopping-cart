@@ -80,6 +80,7 @@ module.exports = {
     'import/no-cycle': 'error',
     'import/no-useless-path-segments': 'error',
     'import/no-relative-parent-imports': 'error',
+<<<<<<< HEAD
     'import/prefer-default-export': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
@@ -99,6 +100,14 @@ module.exports = {
       version: 'detect',
     },
   },
+=======
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+>>>>>>> todari
   overrides: [
     {
       files: ['*.ts', '*.tsx'],

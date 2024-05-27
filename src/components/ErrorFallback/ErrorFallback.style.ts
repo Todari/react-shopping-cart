@@ -6,7 +6,11 @@ export const FallbackContainer = styled.div`
   gap: 24px;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   height: 50vh;
+=======
+  height: 80vh;
+>>>>>>> todari
   width: 100%;
 `;
 

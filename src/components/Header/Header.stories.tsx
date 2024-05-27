@@ -23,6 +23,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
+<<<<<<< HEAD
   render: ({ type }) => {
     return (
       <BrowserRouter>
@@ -33,3 +34,22 @@ export const Playground: Story = {
     );
   },
 };
+=======
+  decorators: [
+    () => {
+      return (
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Header type='logo' />
+              } />
+          </Routes >
+        </BrowserRouter>
+      );
+    },
+  ],
+}
+
+>>>>>>> todari

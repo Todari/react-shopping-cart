@@ -9,21 +9,30 @@ export const Text = styled.p<TextProps>`
         font-size: 12px;
         line-height: 18px;
         color: #0A0D13;
+<<<<<<< HEAD
         margin-top: 2px;
+=======
+>>>>>>> todari
         `;
       case 'm':
         return `
         font-size: 16px;
         line-height: 16px;
         color: #000000;
+<<<<<<< HEAD
         margin-top: 3px;
+=======
+>>>>>>> todari
         `;
       case 'l':
         return `
         font-size: 24px;
         line-height: 34px;
         color: #000000;
+<<<<<<< HEAD
         margin-top: 4px;
+=======
+>>>>>>> todari
         `;
       default:
         return `

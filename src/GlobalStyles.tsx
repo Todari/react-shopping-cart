@@ -135,10 +135,13 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     justify-content: center;
   }
+<<<<<<< HEAD
   .icon-small{
     width: 24px;
     height: 24px;
   }
+=======
+>>>>>>> todari
 `;
 
 export default GlobalStyles;

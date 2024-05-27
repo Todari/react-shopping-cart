@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { lazy, Suspense } from 'react';
 
 import { useNavigate } from 'react-router-dom';
@@ -21,11 +22,31 @@ const CartPage = () => {
   const { addCartItemsForTest } = useAddCartItemsForTest();
 
   const navigate = useNavigate();
+=======
+import Header from '../components/Header/Header';
+import Button from '../components/common/Button/Button';
+import { useNavigate } from 'react-router-dom';
+import CartItemListSection from '../components/CartItemListSection/CartItemListSection';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from '../components/ErrorFallback/ErrorFallback';
+import { Suspense } from 'react';
+import LoadingFallback from '../components/LoadingFallback/LoadingFallback';
+import useCartItemList from '../recoil/cartItemList/useCartItemList';
+import { useCartItemSelectedIdList } from '../recoil/cartItem/useCartItemSelectedIdList';
+
+const CartPage = () => {
+  const { cartItemList } = useCartItemList();
+  const { selectedIdList } = useCartItemSelectedIdList();
+
+  const navigate = useNavigate();
+
+>>>>>>> todari
   return (
     <>
       <Header />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Suspense fallback={<LoadingFallback />}>
+<<<<<<< HEAD
           // TEST를 위한 아이템 추가 버튼
           <Button
             style={{
@@ -40,6 +61,8 @@ const CartPage = () => {
           >
             TEST : 아이템 추가하기
           </Button>
+=======
+>>>>>>> todari
           <CartItemListSection />
         </Suspense>
       </ErrorBoundary>

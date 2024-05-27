@@ -8,3 +8,11 @@ export const Checkbox = styled.input`
   position: absolute;
   clip-path: polygon(0 0, 0 0, 0 0, 0 0);
 `;
+<<<<<<< HEAD
+=======
+
+export const CheckboxImage = styled.img`
+  height: 100%;
+  width: 100%;
+`;
+>>>>>>> todari

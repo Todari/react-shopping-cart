@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as S from './CartItem.style';
 import Text from '../common/Text/Text';
 import Button from '../common/Button/Button';
@@ -29,11 +30,64 @@ const CartItem = ({ type = 'cart', cartItem }: CartItemProps) => {
     apiError?.name === 'FailedSetCartItemQuantityError'
   ) {
     throw apiError;
+=======
+import { useState } from 'react';
+
+import * as S from './CartItem.style';
+
+import Button from '../common/Button/Button';
+import ChangeQuantity from '../common/ChangeQuantity/ChangeQuantity';
+import Checkbox from '../common/Checkbox/Checkbox';
+import Divider from '../common/Divider/Divider';
+import ImageBox from '../common/ImageBox/ImageBox';
+import Text from '../common/Text/Text';
+
+import { useCartItemQuantity } from '../../recoil/cartItem/useCartItemQuantity';
+import { useCartItemSelectedIdList } from '../../recoil/cartItem/useCartItemSelectedIdList';
+import useCartItemList from '../../recoil/cartItemList/useCartItemList';
+
+const CartItem = ({ product, id }: CartItem) => {
+  const { name, price, imageUrl } = product;
+  const { quantity, increaseQuantity, decreaseQuantity } =
+    useCartItemQuantity(id);
+  const { isSelected, addSelectedId, removeSelectedId } =
+    useCartItemSelectedIdList();
+  const { deleteCartItem } = useCartItemList();
+  const [error, setError] = useState<Error | null>(null);
+
+  const deleteCartItemWithErrorHandling = async (id: number) => {
+    try {
+      await deleteCartItem(id);
+    } catch (error) {
+      setError(error as Error);
+    }
+  };
+
+  const increaseQuantityWithErrorHandling = async () => {
+    try {
+      await increaseQuantity();
+    } catch (error) {
+      setError(error as Error);
+    }
+  };
+
+  const decreaseQuantityWithErrorHandling = async () => {
+    try {
+      await decreaseQuantity();
+    } catch (error) {
+      setError(error as Error);
+    }
+  };
+
+  if (error) {
+    throw error;
+>>>>>>> todari
   }
 
   return (
     <S.CartItem>
       <Divider />
+<<<<<<< HEAD
       {type === 'cart' ? (
         <S.ItemHeader>
           <Checkbox
@@ -49,6 +103,25 @@ const CartItem = ({ type = 'cart', cartItem }: CartItemProps) => {
           </Button>
         </S.ItemHeader>
       ) : null}
+=======
+      <S.ItemHeader>
+        <Checkbox
+          state={isSelected(id)}
+          handleClick={
+            isSelected(id)
+              ? () => removeSelectedId(id)
+              : () => addSelectedId(id)
+          }
+        />
+        <Button
+          size="s"
+          radius="s"
+          onClick={() => deleteCartItemWithErrorHandling(id)}
+        >
+          삭제
+        </Button>
+      </S.ItemHeader>
+>>>>>>> todari
       <S.ItemBody>
         <ImageBox
           width={112}
@@ -67,6 +140,7 @@ const CartItem = ({ type = 'cart', cartItem }: CartItemProps) => {
               {`${price.toLocaleString('ko-KR')}원`}
             </Text>
           </S.ItemNameAndCost>
+<<<<<<< HEAD
           {type === 'cart' ? (
             <ChangeQuantity
               quantity={cartItemQuantity(id)}
@@ -78,6 +152,13 @@ const CartItem = ({ type = 'cart', cartItem }: CartItemProps) => {
               {`${cartItemQuantity(id)}개`}
             </Text>
           )}
+=======
+          <ChangeQuantity
+            quantity={quantity}
+            increaseQuantity={increaseQuantityWithErrorHandling}
+            decreaseQuantity={decreaseQuantityWithErrorHandling}
+          />
+>>>>>>> todari
         </S.ItemDetail>
       </S.ItemBody>
     </S.CartItem>

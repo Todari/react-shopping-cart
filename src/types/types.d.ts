@@ -6,6 +6,7 @@ interface Product {
   category: string;
 }
 
+<<<<<<< HEAD
 interface RawCartItem {
   id: number;
   quantity: number;
@@ -42,4 +43,10 @@ interface Coupon {
 interface TEST_ITEM_PROP<T> {
   input: T;
   expected: T;
+=======
+interface CartItem {
+  id: number;
+  quantity: number;
+  product: Product;
+>>>>>>> todari
 }

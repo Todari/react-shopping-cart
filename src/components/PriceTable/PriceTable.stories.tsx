@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import PriceTable from './PriceTable';
 import { RecoilRoot } from 'recoil';
+<<<<<<< HEAD
 import { cartItemListState } from '../../recoil/cartItem/atom';
 import { selectedCartItemIdListState } from '../../recoil/cartItem/atom';
 
@@ -46,6 +47,8 @@ const MOCK_DATA = [
     imageUrl: 'https://sitem.ssgcdn.com/65/73/69/item/1000163697365_i1_750.jpg',
   },
 ];
+=======
+>>>>>>> todari
 
 const meta = {
   title: 'Components/PriceTable',
@@ -58,6 +61,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
+<<<<<<< HEAD
   render: () => {
     return (
       <RecoilRoot
@@ -75,4 +79,17 @@ export const Playground: Story = {
       </RecoilRoot>
     );
   },
+=======
+  decorators: [
+    () => {
+      return (
+        <RecoilRoot>
+          <div style={{ width: '380px' }}>
+            <PriceTable />
+          </div>
+        </RecoilRoot>
+      );
+    },
+  ],
+>>>>>>> todari
 };

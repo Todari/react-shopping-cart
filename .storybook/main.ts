@@ -1,5 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+<<<<<<< HEAD
 import svgr from 'vite-plugin-svgr';
+=======
+>>>>>>> todari
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -18,6 +21,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+<<<<<<< HEAD
   core: {
     builder: '@storybook/builder-vite',
   },
@@ -39,4 +43,7 @@ const config: StorybookConfig = {
   },
 };
 
+=======
+};
+>>>>>>> todari
 export default config;

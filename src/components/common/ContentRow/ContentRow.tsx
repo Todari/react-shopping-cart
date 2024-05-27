@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import Text from '../Text/Text';
 import * as S from './ContentRow.style';
 
+=======
+import * as S from './ContentRow.style';
+
+import Text from '../Text/Text';
+
+>>>>>>> todari
 interface ContentRowProps {
   title: string;
   content: string;
